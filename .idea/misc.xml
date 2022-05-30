@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable-v24/count_bg.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable-v24/follow_button.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable-v24/following_button.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable-v24/ic_round_chat_bubble_24_small.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable-v24/ic_round_close_24.xml" value="0.175" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable-v24/ic_round_search_24.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable-v24/ic_round_thumb_up_24_blue.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable-v24/ic_round_thumb_up_24_small.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/add_selector.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/bottom_navigation_items.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/button_background.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/button_bg.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/delete.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/dialog_bg.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/dialog_button_bg.xml" value="0.175" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/google.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/google_bg.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/home_selector.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_outline_home_24.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_add_circle.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_add_circle_24.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_bookmark_24.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_camera_alt_24.xml" value="0.175" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_chat_bubble_24.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_chat_bubble_24_blue.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_collections_bookmark_24.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_delete_24.xml" value="0.1415" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_group_add_24.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_home_24.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_notifications_24.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_notifications_none_24.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_people_alt_24.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_person_24.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_person_outline_24.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_play_arrow_24.xml" value="0.172" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_saved_search_24.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_search_24.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_share_24.xml" value="0.178" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_share_24_blue.xml" value="0.178" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_style_24.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_thumb_up_24.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_verified_24.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/ic_round_video_library_24.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/notification_selector.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/profile_selector.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/rt_custom_border.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/search_selector.xml" value="0.161" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/drawable/white_circle.xml" value="0.1445" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/activity_edit_reels.xml" value="0.21822916666666667" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/activity_log_in.xml" value="0.10400000000000001" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/activity_main.xml" value="0.13949275362318841" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/activity_reels_view.xml" value="0.21822916666666667" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/activity_search.xml" value="0.21822916666666667" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/activity_view_profile.xml" value="0.24393132030787448" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/comment_bottomsheet_layout.xml" value="0.176" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/comment_layout.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/custom_progress_dialog_layout.xml" value="0.21822916666666667" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/edit_profile_dialog_layout.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_add.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_comment.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_edit_reels.xml" value="0.21822916666666667" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_forgot_password.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_google_log_in.xml" value="0.176" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_home.xml" value="0.176" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_manual_log_in.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_notification.xml" value="0.21822916666666667" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_nt_comments.xml" value="0.20104166666666667" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_nt_followers.xml" value="0.21822916666666667" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_nt_likes.xml" value="0.21822916666666667" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_profile_search.xml" value="0.21822916666666667" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_reels_view.xml" value="0.21822916666666667" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_search.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_sign_up.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/fragment_view_profile.xml" value="0.128" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/notification_layout.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/options_bottomsheet_layout.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/pop_up_dialog_layout.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/profile_bottomsheet_layout.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/profile_elements_bottomsheet_layout.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/reels_layout.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/reels_thumbnail_layout.xml" value="0.176" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/search_layout.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/layout/view_profile_dialog_layout.xml" value="0.176" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/menu/bottom_navigation_bar.xml" value="0.21770833333333334" />
+        <entry key="..\:/AndroidStudioProjects/RANDOMREELS/app/src/main/res/menu/main_navigation_bar.xml" value="0.21822916666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
+  </component>
+</project>
