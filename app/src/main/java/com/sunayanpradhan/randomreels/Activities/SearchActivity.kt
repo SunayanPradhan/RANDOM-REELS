@@ -11,8 +11,10 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -21,19 +23,29 @@ import com.google.firebase.database.ValueEventListener
 import com.sunayanpradhan.randomreels.Adapters.SearchAdapter
 import com.sunayanpradhan.randomreels.Model.InformationModel
 import com.sunayanpradhan.randomreels.R
-import com.sunayanpradhan.randomreels.databinding.ActivitySearchBinding
-
 class SearchActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivitySearchBinding
 
     lateinit var list:ArrayList<InformationModel>
+
+    lateinit var profileSearch:AutoCompleteTextView
+
+    lateinit var searchButton:ImageView
+
+    lateinit var rvProfiles:RecyclerView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        binding= DataBindingUtil.setContentView(this,R.layout.activity_search)
+        profileSearch=findViewById(R.id.profile_search)
+
+        searchButton=findViewById(R.id.search_button)
+
+        rvProfiles=findViewById(R.id.rvProfiles)
+
+
 
         supportActionBar?.hide()
 
@@ -42,17 +54,17 @@ class SearchActivity : AppCompatActivity() {
         this.window?.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
-        showKeyboard(binding.profileSearch)
+        showKeyboard(profileSearch)
 
         list= ArrayList()
 
 
-        binding.profileSearch.setOnEditorActionListener { p0, p1, p2 ->
-            var s: String = binding.profileSearch.text.toString().trim()
+        profileSearch.setOnEditorActionListener { p0, p1, p2 ->
+            var s: String = profileSearch.text.toString().trim()
 
             if (p1== EditorInfo.IME_ACTION_DONE){
 
-                hideKeyboard(binding.profileSearch)
+                hideKeyboard(profileSearch)
 
             }
 
@@ -90,16 +102,16 @@ class SearchActivity : AppCompatActivity() {
             android.R.layout.simple_dropdown_item_1line, titleList)
 
 
-        binding.profileSearch.setAdapter(titleAdapter)
+        profileSearch.setAdapter(titleAdapter)
 
 
 
         var adapter = SearchAdapter(list, this)
         var layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        binding.rvProfiles.layoutManager = layoutManager
+        rvProfiles.layoutManager = layoutManager
 
 
-        binding.profileSearch.addTextChangedListener(object : TextWatcher {
+        profileSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
 
@@ -114,7 +126,8 @@ class SearchActivity : AppCompatActivity() {
 
             override fun afterTextChanged(p0: Editable?) {
 
-                FirebaseDatabase.getInstance().reference.child("Users").orderByChild("userName").startAt(binding.profileSearch.text.toString()).endAt(binding.profileSearch.text.toString()+"\uf8ff")
+                FirebaseDatabase.getInstance().reference.child("Users")
+                    .orderByChild("userName").startAt(profileSearch.text.toString()).endAt(profileSearch.text.toString()+"\uf8ff")
                     .addListenerForSingleValueEvent(object : ValueEventListener {
                         override fun onDataChange(snapshot: DataSnapshot) {
 
@@ -131,7 +144,7 @@ class SearchActivity : AppCompatActivity() {
 
                             adapter.notifyDataSetChanged()
 
-                            binding.rvProfiles.adapter=adapter
+                            rvProfiles.adapter=adapter
 
                         }
 
@@ -148,9 +161,9 @@ class SearchActivity : AppCompatActivity() {
 
         })
 
-        binding.searchButton.setOnClickListener {
+        searchButton.setOnClickListener {
 
-            FirebaseDatabase.getInstance().reference.child("Users").orderByChild("userName").startAt(binding.profileSearch.text.toString()).endAt(binding.profileSearch.text.toString()+"\uf8ff")
+            FirebaseDatabase.getInstance().reference.child("Users").orderByChild("userName").startAt(profileSearch.text.toString()).endAt(profileSearch.text.toString()+"\uf8ff")
                 .addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
 
@@ -168,7 +181,7 @@ class SearchActivity : AppCompatActivity() {
 
                         adapter.notifyDataSetChanged()
 
-                        binding.rvProfiles.adapter=adapter
+                        rvProfiles.adapter=adapter
 
                     }
 
@@ -182,7 +195,7 @@ class SearchActivity : AppCompatActivity() {
         }
 
 
-        binding.profileSearch.setOnDismissListener {
+        profileSearch.setOnDismissListener {
 
             var inputMethodManager:InputMethodManager= getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(currentFocus?.applicationWindowToken,0)

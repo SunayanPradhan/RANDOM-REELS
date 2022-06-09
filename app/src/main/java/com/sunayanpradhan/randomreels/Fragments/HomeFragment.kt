@@ -1,5 +1,7 @@
 package com.sunayanpradhan.randomreels.Fragments
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,6 +16,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.sunayanpradhan.randomreels.Activities.EditReelsActivity
+import com.sunayanpradhan.randomreels.Activities.ViewProfileActivity
 import com.sunayanpradhan.randomreels.Adapters.ReelsAdapter
 import com.sunayanpradhan.randomreels.Model.InformationModel
 import com.sunayanpradhan.randomreels.Model.ReelsModel
@@ -118,6 +122,18 @@ class HomeFragment : Fragment() {
             })
 
 
+        binding.homeProfileCard.setOnClickListener {
+
+            val intent= Intent(requireContext(), ViewProfileActivity::class.java)
+
+            intent.putExtra("userId",FirebaseAuth.getInstance().uid.toString())
+
+            startActivity(intent)
+
+            requireActivity().overridePendingTransition(
+                R.anim.slide_in_right,0)
+
+        }
 
 
 

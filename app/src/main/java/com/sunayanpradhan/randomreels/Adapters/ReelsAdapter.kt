@@ -112,6 +112,7 @@ class ReelsAdapter(var list: List<ReelsModel> , var context: Context):RecyclerVi
         var progressBar:ProgressBar=itemView.findViewById(R.id.progress_bar)
         var reelsVideoPlay:ImageView=itemView.findViewById(R.id.reels_video_play)
         var reelsVideoLike:ImageView=itemView.findViewById(R.id.reels_video_like)
+        var searchFollow:Button=itemView.findViewById(R.id.searchFollow)
 
     }
 
@@ -553,11 +554,13 @@ class ReelsAdapter(var list: List<ReelsModel> , var context: Context):RecyclerVi
         holder.reelsComment.setOnClickListener {
 
 
-            val dialog = BottomSheetDialog(context)
+            val dialog = BottomSheetDialog(context,R.style.BottomSheetDialogTheme)
 
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
 
             dialog.setContentView(R.layout.comment_bottomsheet_layout)
+
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
             dialog.window?.setLayout(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -1457,6 +1460,165 @@ class ReelsAdapter(var list: List<ReelsModel> , var context: Context):RecyclerVi
 
 
         }
+
+
+        if (currentItem.reelsBy==FirebaseAuth.getInstance().uid){
+
+            holder.searchFollow.visibility=View.GONE
+
+        }
+
+
+        FirebaseDatabase.getInstance().reference
+            .child("Users")
+            .child(currentItem.reelsBy)
+            .child("followers")
+            .child(FirebaseAuth.getInstance().uid.toString()).addListenerForSingleValueEvent(object:
+                ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+
+                    follow = FollowModel(FirebaseAuth.getInstance().uid.toString(),Date().time)
+
+                    if(snapshot.exists() ){
+                        holder.searchFollow.setBackgroundDrawable(ContextCompat.getDrawable(context,R.drawable.following_button))
+                        holder.searchFollow.text="Following"
+                        isFollow=true
+
+                    }
+
+                    else{
+
+
+                    }
+
+
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            })
+
+
+        FirebaseDatabase.getInstance().reference
+            .child("Users")
+            .child(FirebaseAuth.getInstance().uid.toString())
+            .child("following")
+            .child(currentItem.reelsBy).addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+
+                    following=FollowingModel(currentItem.reelsBy,Date().time)
+
+                    if(snapshot.exists() ){
+
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+
+
+
+                }
+
+
+            })
+
+
+        holder.searchFollow.setOnClickListener {
+
+            if (isFollow==true){
+
+
+                holder.searchFollow.setBackgroundDrawable(ContextCompat.getDrawable(context,R.drawable.follow_button))
+                holder.searchFollow.text="Follow"
+                isFollow=false
+
+
+                FirebaseDatabase.getInstance().reference
+                    .child("Users")
+                    .child(currentItem.reelsBy)
+                    .child("followers")
+                    .child(FirebaseAuth.getInstance().uid.toString())
+                    .removeValue().addOnSuccessListener {
+
+
+
+                    }
+
+                FirebaseDatabase.getInstance().reference
+                    .child("Users")
+                    .child(FirebaseAuth.getInstance().uid.toString())
+                    .child("following")
+                    .child(currentItem.reelsBy)
+                    .removeValue().addOnSuccessListener {
+
+
+
+                    }
+
+
+
+
+            }
+            else{
+
+
+                holder.searchFollow.setBackgroundDrawable(ContextCompat.getDrawable(context,R.drawable.following_button))
+                holder.searchFollow.text="Following"
+                isFollow=true
+
+                FirebaseDatabase.getInstance().reference
+                    .child("Users")
+                    .child(currentItem.reelsBy)
+                    .child("followers")
+                    .child(FirebaseAuth.getInstance().uid.toString())
+                    .setValue(follow).addOnSuccessListener {
+
+                        var notification: NotificationModel = NotificationModel()
+
+                        notification.notificationBy= FirebaseAuth.getInstance().uid.toString()
+                        notification.notificationAt= Date().time
+                        notification.type="follow"
+
+
+                        var fire=FirebaseDatabase.getInstance().reference
+                            .child("notification")
+                            .child(currentItem.reelsBy)
+                            .push()
+
+                        var notifyId=fire.key.toString()
+
+
+                        fire.setValue(notification)
+
+                        fire.child("notificationId")
+                            .setValue(notifyId)
+
+                        notification.notificationId=notifyId
+
+
+
+                    }
+
+
+
+                FirebaseDatabase.getInstance().reference
+                    .child("Users")
+                    .child(FirebaseAuth.getInstance().uid.toString())
+                    .child("following")
+                    .child(currentItem.reelsBy)
+                    .setValue(following).addOnSuccessListener {
+
+
+
+                    }
+
+            }
+
+        }
+
 
 
 

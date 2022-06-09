@@ -64,7 +64,8 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-                android:background="@drawable/button_background">
+                android:background="@drawable/button_background"
+                android:textStyle="bold">
 
             </android.widget.Button>
 

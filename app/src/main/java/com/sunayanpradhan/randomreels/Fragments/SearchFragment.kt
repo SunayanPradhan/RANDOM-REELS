@@ -1,16 +1,15 @@
 package com.sunayanpradhan.randomreels.Fragments
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -21,12 +20,17 @@ import com.sunayanpradhan.randomreels.Model.InformationModel
 import com.sunayanpradhan.randomreels.R
 import com.sunayanpradhan.randomreels.databinding.FragmentSearchBinding
 
+
 class SearchFragment : Fragment() {
 
 
     lateinit var binding: FragmentSearchBinding
 
     lateinit var list: ArrayList<InformationModel>
+
+    private val context = null
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,7 +96,7 @@ class SearchFragment : Fragment() {
 
             startActivity(intent)
 
-            (requireContext() as Activity).overridePendingTransition(
+            requireActivity().overridePendingTransition(
                 0,0)
 
         }
@@ -100,6 +104,8 @@ class SearchFragment : Fragment() {
 
 
     }
+
+
 
 
 

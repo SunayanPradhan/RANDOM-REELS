@@ -1,16 +1,24 @@
 package com.sunayanpradhan.randomreels.Activities
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.LinearGradient
+import android.graphics.Shader
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextPaint
 import android.view.WindowManager
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
 import com.sunayanpradhan.randomreels.Fragments.*
@@ -21,6 +29,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var bottomBar:BottomNavigationView
 
     lateinit var navController: NavController
+
+    lateinit var bottomBarFloatButton:CardView
+
 
 
 
@@ -37,6 +48,9 @@ class MainActivity : AppCompatActivity() {
 
         bottomBar=findViewById(R.id.bottom_bar)
 
+        bottomBarFloatButton=findViewById(R.id.bottom_bar_floatButton)
+
+
         supportActionBar?.hide()
 
         this.theme?.applyStyle(R.style.FullScreen,false)
@@ -46,13 +60,14 @@ class MainActivity : AppCompatActivity() {
 
         val fragments=supportFragmentManager.findFragmentById(R.id.fragments) as NavHostFragment
 
+
+
         navController=fragments.navController
 
 
         setupWithNavController(bottomBar,navController)
 
-        setupActionBarWithNavController(fragments.navController)
-
+        setupActionBarWithNavController(navController)
 
 
 
@@ -63,6 +78,22 @@ class MainActivity : AppCompatActivity() {
 //        navNotification=findViewById(R.id.nav_notification)
 //        navProfile=findViewById(R.id.nav_profile)
 
+
+
+
+
+
+
+
+        bottomBarFloatButton.setOnClickListener {
+
+            val intent=Intent(this,AddActivity::class.java)
+
+            startActivity(intent)
+
+            overridePendingTransition(0,0)
+
+        }
 
 
 

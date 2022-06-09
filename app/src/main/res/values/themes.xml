@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.RANDOMREELS" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,10 +12,26 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:navigationBarColor">@color/bottom_bar</item>
+<!--        <item name="floatingActionButtonStyle">@style/FloatingActionButtonStyle</item>-->
         <!-- Customize your theme here. -->
     </style>
+    
+    <style name="FloatingActionButtonStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabShapeStyle</item>
+
+    </style>
+
+    <style name="FabShapeStyle" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+
+        <item name="cornerSize">10dp</item>
+
+    </style>
+
+
+
 
     <style name="FullScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
 
         <item name="windowNoTitle">true</item>
         <item name="android:windowActionBar">true</item>

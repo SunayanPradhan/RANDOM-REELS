@@ -5,10 +5,7 @@ import android.content.Intent
 import android.os.Build
 import android.text.Html
 import android.view.*
-import android.widget.ImageView
-import android.widget.PopupMenu
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +16,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.sunayanpradhan.randomreels.Activities.ViewProfileActivity
 import com.sunayanpradhan.randomreels.Model.CommentModel
 import com.sunayanpradhan.randomreels.Model.InformationModel
 import com.sunayanpradhan.randomreels.R
@@ -57,25 +55,35 @@ class CommentAdapter(var CommentItem:List<CommentModel>, var context: Context):R
 
             })
 
-        holder.commentProfile.setOnClickListener {
-//            var intent= Intent(context, ViewProfileActivity::class.java)
-//            intent.putExtra("postBy",currentItem.commentBy)
-//            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-//            context.startActivity(intent)
 
-        }
+        val dialogView = View.inflate(context, R.layout.pop_up_dialog_layout, null)
+
+        val builder = android.app.AlertDialog.Builder(context).setView(dialogView).create()
+
+
+
+
+        builder.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        var dialogCancel = dialogView.findViewById(R.id.dialog_cancel) as ImageView
+        var dialogYes=dialogView.findViewById(R.id.dialog_yes) as Button
+        var dialogNo=dialogView.findViewById(R.id.dialog_no) as Button
+        var dialogLogo=dialogView.findViewById(R.id.dialog_logo) as ImageView
+        var dialogTxt=dialogView.findViewById(R.id.dialog_txt) as TextView
+
+        dialogTxt.text="Delete this comment?"
+
+        dialogLogo.visibility= View.GONE
+
 
         holder.itemView.setOnLongClickListener{
 
-            if (currentItem.commentBy==FirebaseAuth.getInstance().uid){
 
-                holder.commentDelete.visibility=View.VISIBLE
+            if (currentItem.commentBy==FirebaseAuth.getInstance().uid ){
 
-            }
 
-            else{
+                builder.show()
 
-                holder.commentDelete.visibility=View.GONE
 
             }
 
@@ -86,7 +94,9 @@ class CommentAdapter(var CommentItem:List<CommentModel>, var context: Context):R
 
         }
 
-        holder.commentDelete.setOnClickListener {
+        dialogYes.setOnClickListener {
+
+            builder.dismiss()
 
             FirebaseDatabase.getInstance().reference
                 .child("reels")
@@ -94,22 +104,38 @@ class CommentAdapter(var CommentItem:List<CommentModel>, var context: Context):R
                 .child("comments")
                 .child(currentItem.commentId).removeValue().addOnSuccessListener {
 
+                    Toast.makeText(context, "Comment deleted", Toast.LENGTH_SHORT).show()
 
 
                 }
 
 
+        }
+
+        dialogNo.setOnClickListener {
+
+            builder.dismiss()
+
+        }
+
+        dialogCancel.setOnClickListener {
+
+            builder.dismiss()
 
         }
 
 
         holder.commentProfile.setOnClickListener {
-//            var intent=Intent(context, ViewProfileActivity::class.java)
-//            intent.putExtra("postBy",currentItem.commentBy)
-//            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-//            context.startActivity(intent)
+            var intent=Intent(context, ViewProfileActivity::class.java)
+            intent.putExtra("userId",currentItem.commentBy)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
 
         }
+
+        
+
+
 
 
     }
@@ -123,7 +149,6 @@ class CommentAdapter(var CommentItem:List<CommentModel>, var context: Context):R
         val comment:TextView=itemView.findViewById(R.id.comment)
         val time:TextView=itemView.findViewById(R.id.time)
         val commentProfile:ImageView=itemView.findViewById(R.id.comment_profile)
-        val commentDelete:ImageView=itemView.findViewById(R.id.comment_delete)
 
 
 

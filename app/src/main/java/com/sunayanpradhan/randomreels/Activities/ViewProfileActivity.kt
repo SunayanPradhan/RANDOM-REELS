@@ -1176,6 +1176,8 @@ class ViewProfileActivity : AppCompatActivity() {
     }
 
 
+
+
     private fun setClipboard(context: Context, text: String) {
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {

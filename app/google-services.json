@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "318415543543",
-    "project_id": "random-reels",
-    "storage_bucket": "random-reels.appspot.com"
+    "project_number": "474001678404",
+    "project_id": "random-reels-adfc4",
+    "storage_bucket": "random-reels-adfc4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:318415543543:android:8152b05817c1e1aa0607f2",
+        "mobilesdk_app_id": "1:474001678404:android:3a6aaa8fac25d693119c11",
         "android_client_info": {
           "package_name": "com.sunayanpradhan.randomreels"
         }
       },
       "oauth_client": [
         {
-          "client_id": "318415543543-fb3ub9o27mu9n6ourft1620rhobjh3ah.apps.googleusercontent.com",
+          "client_id": "474001678404-vktqpmohehpf6p42uljapc74ln41kr5p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sunayanpradhan.randomreels",
+            "certificate_hash": "6ed2657543456c28939b3bfb75c6caf870e18cc5"
+          }
+        },
+        {
+          "client_id": "474001678404-f7tibf9a7po5hs93s4ramtfke5mgqomi.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD_tvymCa9l1DfWb1OFuP-_jJsxUCpGurg"
+          "current_key": "AIzaSyBln8bjeyLxf42WaN2Bd6Ec98-Mp97jyzM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "318415543543-fb3ub9o27mu9n6ourft1620rhobjh3ah.apps.googleusercontent.com",
+              "client_id": "474001678404-f7tibf9a7po5hs93s4ramtfke5mgqomi.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

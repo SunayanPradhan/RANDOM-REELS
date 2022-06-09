@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#101010">
+        android:background="@drawable/dialog_bg">
 
         <ImageView
             android:id="@+id/option_comment"
@@ -202,7 +202,6 @@
                 android:gravity="center_vertical"
                 android:hint="Leave a comment"
                 android:importantForAutofill="auto"
-                android:paddingTop="5dp"
                 android:paddingBottom="10dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"

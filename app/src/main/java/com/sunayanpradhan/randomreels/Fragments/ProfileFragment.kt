@@ -57,7 +57,6 @@ class ProfileFragment : Fragment() {
 
     private var finalData: String? =null
 
-
     private var previousUrl=""
 
     lateinit var followersList:ArrayList<FollowModel>
@@ -476,6 +475,7 @@ class ProfileFragment : Fragment() {
                 val builder = AlertDialog.Builder(context).setView(dialogView).create()
 
                 builder.show()
+
 
                 builder.window?.setBackgroundDrawableResource(android.R.color.transparent)
 

@@ -93,10 +93,9 @@ class ManualLogInFragment : Fragment() {
     private fun checkMailVerification() {
 
 
-
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser!!.isEmailVerified) {
-            Toast.makeText(requireContext(), "Logged In", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Logged in", Toast.LENGTH_SHORT).show()
             binding.progressBar.visibility=View.INVISIBLE
 
             val intent = Intent(activity, MainActivity::class.java)
