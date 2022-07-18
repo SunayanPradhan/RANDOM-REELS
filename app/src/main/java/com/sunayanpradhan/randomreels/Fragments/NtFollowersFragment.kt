@@ -1,5 +1,6 @@
 package com.sunayanpradhan.randomreels.Fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -173,4 +174,21 @@ class NtFollowersFragment : Fragment() {
 
 
     }
+
+    private var mContext: Context? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        mContext = context
+
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+
+        mContext = null
+
+    }
+
 }

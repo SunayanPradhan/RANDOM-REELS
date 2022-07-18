@@ -7,6 +7,7 @@
     tools:context=".Activities.MainActivity"
     android:background="@color/black">
 
+
     <fragment
         android:id="@+id/fragments"
         android:layout_width="0dp"
@@ -68,7 +69,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:menu="@menu/bottom_navigation_bar"
-            app:cnb_menuResource="@menu/bottom_navigation_bar"
             android:background="#181818"
             app:itemIconTint="@android:color/white"
             app:itemTextColor="@android:color/white">

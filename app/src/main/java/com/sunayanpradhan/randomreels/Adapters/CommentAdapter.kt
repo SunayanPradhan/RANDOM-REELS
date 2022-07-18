@@ -19,11 +19,16 @@ import com.google.firebase.database.ValueEventListener
 import com.sunayanpradhan.randomreels.Activities.ViewProfileActivity
 import com.sunayanpradhan.randomreels.Model.CommentModel
 import com.sunayanpradhan.randomreels.Model.InformationModel
+import com.sunayanpradhan.randomreels.Model.ReelsModel
 import com.sunayanpradhan.randomreels.R
 import java.util.*
 import kotlin.collections.ArrayList
 
 class CommentAdapter(var CommentItem:List<CommentModel>, var context: Context):RecyclerView.Adapter<CommentAdapter.ViewHolder>() {
+
+    lateinit var postUser:String
+
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -46,6 +51,7 @@ class CommentAdapter(var CommentItem:List<CommentModel>, var context: Context):R
                         .load(user?.userProfilePhoto)
                         .into(holder.commentProfile)
 
+
                     holder.comment.text= Html.fromHtml("<b>"+user?.userName+"</b>" +"    " + currentItem.commentBody)
                 }
 
@@ -54,6 +60,33 @@ class CommentAdapter(var CommentItem:List<CommentModel>, var context: Context):R
                 }
 
             })
+
+        FirebaseDatabase.getInstance().reference
+            .child("reels")
+            .child(currentItem.commentPostId)
+            .addValueEventListener(object :ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+
+                    val data:ReelsModel?=snapshot.getValue(ReelsModel::class.java)
+
+                    data?.reelsId=snapshot.key.toString()
+
+                    postUser=data?.reelsBy.toString()
+
+
+
+
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(context, error.message, Toast.LENGTH_SHORT).show()
+                }
+
+
+            })
+
+
+
 
 
         val dialogView = View.inflate(context, R.layout.pop_up_dialog_layout, null)
@@ -78,15 +111,15 @@ class CommentAdapter(var CommentItem:List<CommentModel>, var context: Context):R
 
         holder.itemView.setOnLongClickListener{
 
+            Toast.makeText(context, postUser, Toast.LENGTH_SHORT).show()
 
-            if (currentItem.commentBy==FirebaseAuth.getInstance().uid ){
+            if (currentItem.commentBy==FirebaseAuth.getInstance().uid){
+
 
 
                 builder.show()
 
-
             }
-
 
 
             return@setOnLongClickListener true

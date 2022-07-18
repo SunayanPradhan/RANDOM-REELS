@@ -1,6 +1,7 @@
 package com.sunayanpradhan.randomreels.Fragments
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.LinearGradient
@@ -239,7 +240,21 @@ class GoogleLogInFragment : Fragment() {
 
     }
 
+    private var mContext: Context? = null
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        mContext = context
+
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+
+        mContext = null
+
+    }
 
 
 }

@@ -1,5 +1,6 @@
 package com.sunayanpradhan.randomreels.Fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -111,6 +112,22 @@ class ManualLogInFragment : Fragment() {
             binding.progressBar.visibility=View.INVISIBLE
             firebaseAuth.signOut()
         }
+    }
+
+    private var mContext: Context? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        mContext = context
+
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+
+        mContext = null
+
     }
 
 }

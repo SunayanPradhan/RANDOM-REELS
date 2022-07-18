@@ -1,5 +1,6 @@
 package com.sunayanpradhan.randomreels.Fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -143,6 +144,22 @@ class SignUpFragment : Fragment() {
             Toast.makeText(requireContext(), "Failed To Send Verification", Toast.LENGTH_SHORT).show()
 
         }
+    }
+
+    private var mContext: Context? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        mContext = context
+
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+
+        mContext = null
+
     }
 
 

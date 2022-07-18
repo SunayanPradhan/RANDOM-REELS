@@ -46,24 +46,14 @@ class LogInActivity : AppCompatActivity() {
         this.window?.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
 
-//        signInBtn=findViewById(R.id.sign_in_btn)
-//
-//        mAuth= FirebaseAuth.getInstance()
-//
-//        createRequest()
-//
-//        signInBtn.setOnClickListener {
-//
-//            signIn()
-//
-//        }
+
 
         firebaseAuth= FirebaseAuth.getInstance()
 
         val firebaseUser=firebaseAuth.currentUser
 
         if(firebaseUser!=null){
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this,SplashScreenActivity::class.java))
             finish()
 
         }
@@ -72,106 +62,6 @@ class LogInActivity : AppCompatActivity() {
 
     }
 
-//    private fun createRequest(){
-//
-//        var gso:GoogleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
-////            .requestIdToken(getString(R.string.default_web_client_id))
-//            .requestEmail()
-//            .build()
-//
-//
-//
-//        mGoogleSignInClient=GoogleSignIn.getClient(this,gso)
-//
-//
-//
-//    }
-
-//    private fun signIn(){
-//
-//        var signInIntent=mGoogleSignInClient.signInIntent
-//
-//        startActivityForResult(signInIntent,RC_SIGN_IN)
-//
-//
-//    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-//        when (requestCode) {
-//            RC_SIGN_IN -> {
-//
-//                var task:Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-//
-//                try {
-//
-//                    var account : GoogleSignInAccount =task.getResult(ApiException::class.java)
-//
-//                    firebaseAuthWithGoogle(account)
-//
-//                }
-//
-//                catch (e:ApiException){
-//
-//
-//
-//                }
-//
-//
-//            }
-//        }
-    }
-
-//    private fun firebaseAuthWithGoogle(account: GoogleSignInAccount) {
-//
-//        var credential=GoogleAuthProvider.getCredential(account.idToken,null)
-//
-//        mAuth.signInWithCredential(credential)
-//            .addOnCompleteListener(this,object : OnCompleteListener<AuthResult>{
-//                override fun onComplete(task: Task<AuthResult>) {
-//
-//                    if (task.isSuccessful){
-//
-//                        var user: FirebaseUser? =mAuth.currentUser
-//
-//                        var intent=Intent(this@LogInActivity,MainActivity::class.java)
-//
-//                        startActivity(intent)
-//
-//                    }
-//                    else{
-//
-//                        Toast.makeText(this@LogInActivity, "Login failed", Toast.LENGTH_SHORT).show()
-//
-//                    }
-//
-//
-//                }
-//
-//
-//            })
-//
-//
-//
-//    }
-
-    override fun onStart() {
-        super.onStart()
-
-//        var user: FirebaseUser? =mAuth.currentUser
-//
-//        if (user!=null){
-//
-//            var intent=Intent(this,MainActivity::class.java)
-//
-//            startActivity(intent)
-//
-//
-//
-//        }
-
-    }
 
 
 }

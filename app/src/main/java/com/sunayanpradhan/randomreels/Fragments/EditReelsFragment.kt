@@ -1,6 +1,7 @@
 package com.sunayanpradhan.randomreels.Fragments
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
@@ -291,6 +292,22 @@ class EditReelsFragment : Fragment() {
         intMillis -= TimeUnit.SECONDS.toMillis(ss)
         val stringInterval = "%02d:%02d"
         return String.format(stringInterval, mm, ss)
+    }
+
+    private var mContext: Context? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        mContext = context
+
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+
+        mContext = null
+
     }
 
 

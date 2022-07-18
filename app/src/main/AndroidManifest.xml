@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RANDOMREELS">
         <activity
+            android:name=".Activities.SplashScreenActivity"
+            android:exported="false" />
+        
+
+        <activity
             android:name=".Activities.AddActivity"
             android:exported="false" />
         <activity
